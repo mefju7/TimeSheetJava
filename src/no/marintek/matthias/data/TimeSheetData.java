@@ -1,6 +1,5 @@
 package no.marintek.matthias.data;
 
-import java.beans.PropertyChangeSupport;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -32,7 +31,7 @@ public class TimeSheetData {
 	public TreeMap<String,TreeMap<String, TimeSheetEntry>> projTask;
 
 	@XmlTransient
-	PropertyChangeSupport changed = new PropertyChangeSupport(this);
+	//PropertyChangeSupport changed = new PropertyChangeSupport(this);
 	private TimeSheetEntry lastEntry;
 	public Date nextTurnOver=new Date();
 	
@@ -117,7 +116,7 @@ public class TimeSheetData {
 			
 		}
 		lastEntry=last;
-		changed.firePropertyChange("refreshed",0,0);
+		// changed.firePropertyChange("refreshed",0,0);
 		return this;
 	}
 
